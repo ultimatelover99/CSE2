@@ -23,14 +23,22 @@ public class Timer{
     double currentTime = input.nextInt();
     
     System.out.print("Enter the time that you will be eating dinner: ");
-    double dinnerTime = input.nextInt();
+    int dinnerTime = input.nextInt();
     
 //calcs
     currentTime /= 100.0;
     dinnerTime /=100.0;
     
-    double hey = Math.round(currentTime*100)/100.0;
-    System.out.println(hey);
+    int currentTimeHour = (int)(currentTime/10)%10;
+    int currentTimeMinutes = (int)(currentTime*10)%10;
+    int dinnerTimeHour = (int)(dinnerTime/10)%10;
+    int dinnerTimeMinutes = (int)(dinnerTime*10)%10;
+    
+    int hours = dinnerTimeHour - currentTimeHour;
+    int minutes =10*(dinnerTimeMinutes = currentTimeMinutes);
+    
+    System.out.println(" You have "+hours+" hours and "+minutes+
+    " minutes until dinner. ");
     
     }//end main method
 }//end class
